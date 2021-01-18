@@ -2,20 +2,21 @@ package cz.educanet.zoo;
 
 import cz.educanet.zoo.models.Animal;
 
+import javax.inject.Inject;
 import javax.validation.constraints.Positive;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 
-@Path("/animals")
+@Path("animals")
 @Produces(MediaType.APPLICATION_JSON)
 public class AnimalResource {
 
     private ArrayList<Animal> animals = new ArrayList<Animal>();
+
+    @Inject
+    private AnimalManager animalManager;
 
     @GET
     public Response getAnimals(){
@@ -23,11 +24,17 @@ public class AnimalResource {
     }
 
     @POST
-    public Response addAnimal(Animal animal){
-        animal.setAge(22);
-        animal.setName("Chuj");
-        animal.setGender("female");
-        animal.setWeight(50);
-        return Response.ok(animal).build();
+    public Response addAnimal(@FormParam("name") String name,
+                              @FormParam("age") Integer age,
+                              @FormParam("weight") Integer weight,
+                              @FormParam("gender") String gender){
+
+    Animal animal = new Animal(name, age, weight, gender);
+
+    animalManager.saveAnimal(animal);
+    return Response.ok("Zvíře přidáno").build();
+
     }
+
+
 }
