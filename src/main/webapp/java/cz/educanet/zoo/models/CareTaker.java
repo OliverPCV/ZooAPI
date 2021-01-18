@@ -5,6 +5,13 @@ public class CareTaker {
     private String lastName;
     private Integer age;
 
+    public CareTaker( String name, String lastName, Integer age){
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
+
+    }
+
     public String getName(){
         return name;
     }
