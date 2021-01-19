@@ -3,16 +3,12 @@ package cz.educanet.zoo.models;
 public class Animal {
 
     private String name;
-    private Integer age;
-    private Integer weight;
+    private int age;
+    private double weight;
+    private int id;
     private String gender;
 
-    public Animal( String name, Integer age, Integer weight,  String gender){
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-        this.gender = gender;
-    }
+
 
     public String getName(){
         return name;
@@ -20,6 +16,10 @@ public class Animal {
     public Integer getAge(){
         return age;
     }
+    public Integer getId(){
+        return id;
+    }
+
     public Integer getWeight(){
         return weight;
     }
@@ -30,10 +30,14 @@ public class Animal {
     public void setName(String name){
         this.name = name;
     }
-    public void setAge(Integer age){
+    public void setAge(int age){
         this.age = age;
     }
-    public void setWeight(Integer weight){
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public void setWeight(int weight){
         this.weight = weight;
     }
     public void setGender(String gender){

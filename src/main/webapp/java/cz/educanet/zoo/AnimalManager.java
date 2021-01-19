@@ -10,9 +10,9 @@ import java.util.ArrayList;
 @ApplicationScoped
 public class AnimalManager {
 
-    private ArrayList<Animal> animals = new ArrayList<Animal>();
+    private ArrayList<Animal> animals = new ArrayList<>();
 
-    public ArrayList<Animal> getAnimal(){
+    public ArrayList<Animal> getAnimals(){
         return animals;
     }
 

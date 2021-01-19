@@ -20,7 +20,7 @@ public class AnimalResource {
 
     @GET
     public Response getAnimals(){
-        return Response.ok(animals).build();
+        return Response.ok(animalManager.getAnimals()).build();
     }
 
     @POST
