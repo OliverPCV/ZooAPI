@@ -3,13 +3,18 @@ package cz.educanet.zoo.models;
 public class CareTaker {
     private String name;
     private String lastName;
-    private Integer age;
+    private String gender;
+    private int id;
 
-    public CareTaker( String name, String lastName, Integer age){
+    public CareTaker( String name, String lastName, String gender){
         this.name = name;
         this.lastName = lastName;
-        this.age = age;
+        this.gender = gender;
 
+    }
+
+    public int getId(){
+        return id;
     }
 
     public String getName(){
@@ -20,8 +25,8 @@ public class CareTaker {
         return lastName;
     }
 
-    public Integer getAge(){
-        return age;
+    public String getGender(){
+        return gender;
     }
 
     public void setName(String name){
@@ -32,7 +37,12 @@ public class CareTaker {
         this.lastName = lastName;
     }
 
-    public void setAge(Integer age){
-        this.age = age;
+    public void setGender(String gender){
+        this.gender = gender;
     }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
 }
